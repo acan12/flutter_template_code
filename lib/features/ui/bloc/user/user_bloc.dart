@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter_template_code/repo/features/user_repository.dart';
+import 'package:flutter_template_code/features/domain/repo/user_repository.dart';
 import 'package:meta/meta.dart';
 
 import '../../../data/remote/response/user/user_response.dart';

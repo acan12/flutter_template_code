@@ -1,6 +1,7 @@
+import 'package:flutter_template_code/features/data/model/question.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../model/question.dart';
+import '';
 import '../base_response.dart';
 
 part 'question_response.freezed.dart';
