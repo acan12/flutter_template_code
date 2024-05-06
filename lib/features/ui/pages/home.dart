@@ -36,10 +36,6 @@ class HomePage extends StatelessWidget {
                               style:
                                   const TextStyle(fontWeight: FontWeight.bold)),
                           const Text("Source : from API "),
-                          Text(
-                            'Testing',
-                            style: Theme.of(context).textTheme.headlineMedium,
-                          ),
                         ],
                       ),
                     );

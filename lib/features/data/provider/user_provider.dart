@@ -10,7 +10,4 @@ class UserProvider implements UserProviderImpl{
 
   @override
   Future<UserResponse> getUsers() async => clientUser.getPersona();
-
-
-
 }

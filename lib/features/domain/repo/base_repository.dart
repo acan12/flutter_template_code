@@ -1,4 +1,4 @@
 
-class BaseRepository {
+abstract class BaseRepository {
 
 }
