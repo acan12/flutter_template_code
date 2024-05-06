@@ -11,7 +11,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => UserBloc(userRepo: UserRepository()))
+        BlocProvider(
+            create: (context) =>
+                UserBloc(userRepo: UserRepository())..add(LoadUser()))
       ],
       child: MaterialApp(
         home: Scaffold(
@@ -25,13 +27,15 @@ class HomePage extends StatelessWidget {
                   case UserLoading():
                     return const Center(child: CircularProgressIndicator());
                   case UserLoaded():
+                    final user = state.user;
                     return Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          const Text(
-                            'You have pushed the button this many times:',
-                          ),
+                          Text("${user.fullName} (${user.email}) ",
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold)),
+                          const Text("Source : from API "),
                           Text(
                             'Testing',
                             style: Theme.of(context).textTheme.headlineMedium,
