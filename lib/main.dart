@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template_code/features/ui/pages/home.dart';
+import 'package:flutter_template_code/features/ui/pages/screens/home.dart';
 
 void main() {
   runApp(const MyApp());
