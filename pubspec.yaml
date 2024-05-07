@@ -29,29 +29,32 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.2
-  dio: ^5.4.3+1
+  dio: ^5.4.3+1 # http dio management handler
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.5
-  freezed_annotation: ^2.4.1
-  json_annotation: ^4.9.0
-  retrofit: ^4.1.0
-  retrofit_generator: ^8.1.0
-  get_it: ^7.7.0
-  floor: ^1.4.2
+  flutter_bloc: ^8.1.5 # flutter bloc state manager
+  freezed_annotation: ^2.4.1 # models minimalized
+  json_annotation: ^4.9.0 # json annotation
+  retrofit: ^4.1.0 # Dio client generator
+  retrofit_generator: ^8.1.0 # retrofit generator
+  get_it: ^7.7.0 # Dependency injaction
+  floor: ^1.4.2 # Databases
+  intl: ^0.18.1 # Date format
+
+  cached_network_image: ^3.2.0 # cached image
 
 dev_dependencies:
-  build_runner: ^2.4.9
+  build_runner: ^2.4.9 # build generator class
   build_test: ^2.2.2
-  pretty_dio_logger: ^1.1.1
+  pretty_dio_logger: ^1.1.1 # log flutter
   freezed: ^2.5.2
   json_serializable: ^6.8.0
   flutter_lints: ^3.0.2
   flutter_test:
     sdk: flutter
   analyzer: ^5.0.0
-  floor_generator: ^1.4.2
-  chucker_flutter: ^1.7.0
+  floor_generator: ^1.4.2 # Database class generator
+  chucker_flutter: ^1.7.0 # log tracking api request from dio
 #  mockito: ^5.3.0                       # Testing fake object
 #  mocktail:
 

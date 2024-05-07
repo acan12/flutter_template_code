@@ -3,8 +3,6 @@ import 'package:flutter_template_code/features/data/remote/response/user/user_re
 
 import 'base_repository.dart';
 
-class UserRepository extends BaseRepository {
-  final userProvider = UserProvider();
-
-  Future<UserResponse> getUser() => userProvider.getUsers();
+abstract class UserRepository {
+  Future<UserResponse> getUser();
 }
