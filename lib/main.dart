@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template_code/features/ui/pages/screens/home.dart';
 
-void main() {
+import 'config/injection.dart';
+
+void main() async{
+  await initializeDependencies();
   runApp(const MyApp());
 }
 

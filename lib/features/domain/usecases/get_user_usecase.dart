@@ -6,7 +6,7 @@ import '../repo/user_repository.dart';
 class GetUserUseCase implements BaseUseCase<UserResponse, void> {
   final UserRepository _userRepository;
 
-  GetUserUseCase.name(this._userRepository);
+  GetUserUseCase(this._userRepository);
 
   @override
   Future<UserResponse> call({void params}) {

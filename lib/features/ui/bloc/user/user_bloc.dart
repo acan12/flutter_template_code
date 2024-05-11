@@ -14,7 +14,7 @@ part 'user_state.dart';
 class UserBloc extends Bloc<UserEvent, UserState> {
   final GetUserUseCase _getUserUseCase;
 
-  UserBloc({required this._getUserUseCase}) : super(UserInitial()) {
+  UserBloc(this._getUserUseCase) : super(UserInitial()) {
     on<LoadUser>((event, emit) async {
       emit(UserLoading());
       try {

@@ -1,5 +1,15 @@
-import '../remote/response/user/user_response.dart';
+import 'package:dio/dio.dart';
+import 'package:flutter_template_code/features/data/provider/user_provider.dart';
+import 'package:flutter_template_code/features/data/remote/api_portfolio_service.dart';
+import 'package:flutter_template_code/features/data/remote/api_question_service.dart';
+import 'package:flutter_template_code/features/data/remote/response/user/user_response.dart';
 
-abstract class UserProviderImpl {
-  Future<UserResponse> getUsers();
+class UserProviderImpl implements UserProvider {
+  final clientUser =
+      ApiPortfolioService(Dio(BaseOptions(contentType: "application/json")));
+  final clientQuestion =
+      ApiQuestionService(Dio(BaseOptions(contentType: "application/json")));
+
+  @override
+  Future<UserResponse> getUsers() async => clientUser.getPersona();
 }

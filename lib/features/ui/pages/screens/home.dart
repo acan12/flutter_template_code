@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_template_code/features/domain/usecases/get_user_usecase.dart';
 
-import '../../../domain/repo/user_repository_impl.dart';
+import '../../../../config/injection.dart';
 import '../../bloc/user/user_bloc.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,9 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-            create: (context) =>
-                UserBloc(_getUserUseCase: GetUserUseCase())..add(LoadUser()))
+        BlocProvider<UserBloc>(create: (context) => sl()..add(LoadUser()))
       ],
       child: MaterialApp(
         home: Scaffold(
