@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../config/injection.dart';
 import '../../bloc/user/user_bloc.dart';
+import '../../widgets/show_profile_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -26,17 +27,8 @@ class HomePage extends StatelessWidget {
                     return const Center(child: CircularProgressIndicator());
                   case UserLoaded():
                     final user = state.user;
-                    return Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text("${user.fullName} (${user.email}) ",
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold)),
-                          const Text("Source : from API "),
-                        ],
-                      ),
-                    );
+                    return ShowProfileWidget(
+                        fullName: user.fullName, email: user.email);
                   case UserError():
                   // TODO: Handle this case.
                   default:
