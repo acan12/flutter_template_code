@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_template_code/features/data/local/entity/base_entity.dart';
+import 'package:flutter_template_code/features/data/local/entities/base_entity.dart';
 import 'package:hive/hive.dart';
 
 class BaseLocalEntityRepository {
