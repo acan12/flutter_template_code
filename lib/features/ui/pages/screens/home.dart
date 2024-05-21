@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<UserBloc>(create: (context) => sl()..add(LoadUser()))
+        BlocProvider<UserBloc>(create: (context) => sl()..add(FetchUser()))
       ],
       child: MaterialApp(
         home: Scaffold(

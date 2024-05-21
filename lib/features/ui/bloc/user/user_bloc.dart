@@ -12,7 +12,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   final GetUserUseCase _getUserUseCase;
 
   UserBloc(this._getUserUseCase) : super(UserInitial()) {
-    on<LoadUser>((event, emit) async {
+    on<FetchUser>((event, emit) async {
       emit(UserLoading());
       try {
         final result = await _getUserUseCase();
