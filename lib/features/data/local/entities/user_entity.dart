@@ -1,4 +1,5 @@
-import 'package:flutter_template_code/features/data/local/entities/base_entity.dart';
+
+import 'package:coconut/data/base_entity.dart';
 import 'package:hive/hive.dart';
 
 part 'user_entity.g.dart';

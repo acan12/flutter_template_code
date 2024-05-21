@@ -1,5 +1,5 @@
+import 'package:coconut/domain/base_usecase.dart';
 import 'package:flutter_template_code/features/data/remote/response/user/user_response.dart';
-import 'package:flutter_template_code/features/domain/usecases/base_usecase.dart';
 
 import '../repo/user_repository.dart';
 

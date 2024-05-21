@@ -1,8 +1,7 @@
-import 'package:flutter_template_code/features/data/remote/provider/user_provider_impl.dart';
+import 'package:coconut/domain/base_repository.dart';
 import 'package:flutter_template_code/features/data/remote/response/user/user_response.dart';
 
 import '../../data/remote/provider/user_provider.dart';
-import 'base_repository.dart';
 import 'user_repository.dart';
 
 class UserRepositoryImpl extends BaseRepository implements UserRepository {
