@@ -1,7 +1,4 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
-import 'package:flutter_template_code/features/domain/repo/user_repository_impl.dart';
 import 'package:flutter_template_code/features/domain/usecases/get_user_usecase.dart';
 import 'package:meta/meta.dart';
 
@@ -18,12 +15,11 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<LoadUser>((event, emit) async {
       emit(UserLoading());
       try {
-        final result = await _getUserUseCase() ;
+        final result = await _getUserUseCase();
         emit(UserLoaded(result));
-      } catch(error) {
+      } catch (error) {
         emit(UserError(error.toString()));
       }
-
     });
   }
 }
