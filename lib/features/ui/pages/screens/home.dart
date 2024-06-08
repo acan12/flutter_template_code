@@ -59,3 +59,7 @@ class HomePage extends StatelessWidget {
     // );
   }
 }
+
+String reversedString(String initial) {
+  return initial.split('').reversed.join();
+}
