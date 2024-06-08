@@ -1,3 +1,4 @@
+import 'package:coconut/ui/base_statefull_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -5,8 +6,7 @@ import '../../../../config/injection.dart';
 import '../../bloc/user/user_bloc.dart';
 import '../../widgets/show_profile_widget.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomePage extends BaseStatefullWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,8 @@ class HomePage extends StatelessWidget {
                     return ShowProfileWidget(
                         fullName: user.fullName, email: user.email);
                   case UserError():
-                  // TODO: Handle this case.
+                    return const Text("Something wrong in your app");
+
                   default:
                     return const Text("Default");
                 }
@@ -58,6 +59,23 @@ class HomePage extends StatelessWidget {
     //   ),
     // );
   }
+
+  @override
+  void onSuccess() {
+    // TODO: implement onSuccess
+  }
+
+  @override
+  void onError() {
+    // TODO: implement onError
+  }
+
+  @override
+  void onLoading() {
+    // TODO: implement onLoading
+  }
+
+
 }
 
 String reversedString(String initial) {
