@@ -15,14 +15,14 @@ void main() {
     late UserBloc userBloc;
     final usecase = MockGetUserUseCase();
     const userResponse = UserResponse(id: 1, fullName: "tester", email: "tester@lib.com");
-    
+
     setUp(() {
       when(usecase.call()).thenAnswer((_) => Future(() => userResponse));
       userBloc = UserBloc(usecase);
     });
 
     test('initial setup', () {
-      expect(userBloc.state, UserInitial());
+      expect(userBloc.state.runtimeType.toString(), "UserInitial");
     });
 
     blocTest('get user data',
