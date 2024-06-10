@@ -33,6 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.5 # flutter bloc state manager
+#  equatable: ^2.0.5
   freezed_annotation: ^2.4.1 # models minimalized
   json_annotation: ^4.9.0 # json annotation
   retrofit: ^4.1.0 # Dio client generator
@@ -58,7 +59,7 @@ dev_dependencies:
     sdk: flutter
   analyzer: ^5.0.0
   mockito: ^5.4.4
-  bloc_test: ^9.0.3
+  bloc_test: ^9.1.6
 #  floor_generator: ^1.4.2 # Database class generator
   chucker_flutter: ^1.7.0 # log tracking api request from dio
 #  mockito: ^5.3.0                       # Testing fake object
