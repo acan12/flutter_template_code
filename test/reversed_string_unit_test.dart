@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_template_code/features/data/remote/response/user/user_response.dart';
 import 'package:flutter_template_code/features/domain/usecases/get_user_usecase.dart';
@@ -14,8 +12,8 @@ import 'reversed_string_unit_test.mocks.dart';
 @GenerateMocks([GetUserUseCase])
 void main() {
   group('get user bloc test', () {
-    late UserBloc userBloc;
     final usecase = MockGetUserUseCase();
+    final UserBloc userBloc = UserBloc(usecase);
     const userResponse =
         UserResponse(id: 1, fullName: "tester", email: "tester@lib.com");
 
@@ -29,7 +27,7 @@ void main() {
 
     blocTest<UserBloc, UserState>(
       'get user data',
-      build: () => UserBloc(usecase),
+      build: () => userBloc,
       act: (bloc) async {
         bloc.add(FetchUser());
       },
@@ -42,6 +40,4 @@ void main() {
       expect(reversed, "olleH");
     });
   });
-
-
 }
