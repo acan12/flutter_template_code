@@ -1,13 +1,14 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_template_code/features/domain/usecases/get_user_usecase.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:meta/meta.dart';
 
 import '../../../data/remote/response/user/user_response.dart';
 
-part 'user_event.dart';
+// part 'user_event.dart';
 
-part 'user_state.dart';
+part  'user_state.dart';
 
 class UserBloc extends Bloc<UserEvent, UserState> {
   final GetUserUseCase _getUserUseCase;
