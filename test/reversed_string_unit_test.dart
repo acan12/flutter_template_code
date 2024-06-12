@@ -22,16 +22,16 @@ void main() {
     });
 
     test('initial setup', () {
-      expect(UserBloc(usecase).state.runtimeType.toString(), "UserInitial");
+      expect(UserBloc(usecase).state, const UserState.initial());
     });
 
     blocTest<UserBloc, UserState>(
       'get user data',
       build: () => userBloc,
       act: (bloc) async {
-        bloc.add(FetchUser());
+        bloc.add(const UserEvent.fetchUser());
       },
-      expect: () => <UserState>[UserLoading(), UserLoaded(userResponse)],
+      expect: () => <UserState>[const UserState.loading(), const UserState.loaded(userResponse)],
     );
 
     test("String should be reversed", () {

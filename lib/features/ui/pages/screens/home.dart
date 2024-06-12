@@ -7,36 +7,46 @@ import '../../bloc/user/user_bloc.dart';
 import '../../widgets/show_profile_widget.dart';
 
 class HomePage extends BaseStatefullWidget {
-
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<UserBloc>(create: (context) => sl()..add(FetchUser()))
+        BlocProvider<UserBloc>(
+            create: (context) => sl()..add(const UserEvent.fetchUser()))
       ],
       child: MaterialApp(
         home: Scaffold(
             appBar: AppBar(
               title: const Text("Demo User Bloc"),
             ),
-            body: BlocBuilder<UserBloc, UserState>(
-              builder: (context, state) {
-                switch (state) {
-                  case UserInitial():
-                  case UserLoading():
-                    return const Center(child: CircularProgressIndicator());
-                  case UserLoaded():
-                    final user = state.user;
-                    return ShowProfileWidget(
-                        fullName: user.fullName, email: user.email);
-                  case UserError():
-                    return const Text("Something wrong in your app");
+            body: BlocBuilder<UserBloc, UserState>(builder: (context, state) {
+              state.when(
+                initial: () => {''},
+                loading: () =>
+                    {const Center(child: CircularProgressIndicator())},
+                loaded: (user) => {
+                  ShowProfileWidget(fullName: user.fullName, email: user.email)
+                },
+                error: (errorMessage) => {print(errorMessage.toString())},
+              );
+              return const Text("Default");
+            }
+                // switch (state) {
+                //   case initial:
+                //   case UserLoading():
+                //     return const Center(child: CircularProgressIndicator());
+                //   case UserLoaded():
+                //     final user = state.user;
+                //     return ShowProfileWidget(
+                //         fullName: user.fullName, email: user.email);
+                //   case UserError():
+                //     return const Text("Something wrong in your app");
+                //
+                //   default:
+                //     return const Text("Default");
+                // }
 
-                  default:
-                    return const Text("Default");
-                }
-              },
-            )),
+                )),
       ),
     );
     // return Scaffold(
@@ -74,8 +84,6 @@ class HomePage extends BaseStatefullWidget {
   void onLoading() {
     // TODO: implement onLoading
   }
-
-
 }
 
 String reversedString(String initial) {

@@ -1,13 +1,11 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-part  'user_state.freezed.dart';
+part of 'user_bloc.dart';
 
 @freezed
 class UserState with _$UserState {
   const factory UserState.initial() = _Initial;
   const factory UserState.loading() = _Loading;
-  const factory UserState.loaded() = _Loaded;
-  const factory UserState.error() = _Error;
+  const factory UserState.loaded(UserResponse userResponse) = _Loaded;
+  const factory UserState.error(String errorMessage) = _Error;
 }
 
 // final class UserInitial extends UserState {
