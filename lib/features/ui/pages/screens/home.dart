@@ -30,44 +30,9 @@ class HomePage extends BaseStatefullWidget {
                 error: (errorMessage) => {print(errorMessage.toString())},
               );
               return const Text("Default");
-            }
-                // switch (state) {
-                //   case initial:
-                //   case UserLoading():
-                //     return const Center(child: CircularProgressIndicator());
-                //   case UserLoaded():
-                //     final user = state.user;
-                //     return ShowProfileWidget(
-                //         fullName: user.fullName, email: user.email);
-                //   case UserError():
-                //     return const Text("Something wrong in your app");
-                //
-                //   default:
-                //     return const Text("Default");
-                // }
-
-                )),
+            })),
       ),
     );
-    // return Scaffold(
-    //   appBar: AppBar(
-    //     title: const Text("Demo User Bloc"),
-    //   ),
-    //   body: Center(
-    //     child: Column(
-    //       mainAxisAlignment: MainAxisAlignment.center,
-    //       children: <Widget>[
-    //         const Text(
-    //           'You have pushed the button this many times:',
-    //         ),
-    //         Text(
-    //           'Testing',
-    //           style: Theme.of(context).textTheme.headlineMedium,
-    //         ),
-    //       ],
-    //     ),
-    //   ),
-    // );
   }
 
   @override
