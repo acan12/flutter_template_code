@@ -13,9 +13,9 @@ class ShowProfileWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text("$fullName ($email) ",
+          Text("$fullName ($email from User data) ",
               style: const TextStyle(fontWeight: FontWeight.bold)),
-          const Text("Source : from API "),
+          const Text("Source : from Remote Api "),
         ],
       ),
     );

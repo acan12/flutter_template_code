@@ -1,19 +1,9 @@
 part of 'user_bloc.dart';
 
-@immutable
-sealed class UserState {}
-
-final class UserInitial extends UserState {}
-
-final class UserLoading extends UserState {}
-
-final class UserLoaded extends UserState {
-  final UserResponse user;
-
-  UserLoaded(this.user);
-}
-
-final class UserError extends UserState {
-  final String error;
-  UserError(this.error);
+@freezed
+class UserState with _$UserState {
+  const factory UserState.initial() = _Initial;
+  const factory UserState.loading() = _Loading;
+  const factory UserState.loaded(UserResponse userResponse) = _Loaded;
+  const factory UserState.error(String errorMessage) = _Error;
 }
